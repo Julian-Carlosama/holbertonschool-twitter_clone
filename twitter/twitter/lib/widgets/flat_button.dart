@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 
 class CustomFlatButton extends StatelessWidget {
-  //const CustomFlatButton({super.key});
   final String label;
   final Function onPressed;
 
-  CustomFlatButton({Key? key, required this.label, required this.onPressed()})
-      : super(key: key);
+  CustomFlatButton({
+    Key? key,
+    required this.label,
+    required this.onPressed()
+  }): super(key: key);
 
   @override
   Widget build(BuildContext context) {

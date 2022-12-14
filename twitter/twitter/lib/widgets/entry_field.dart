@@ -1,10 +1,16 @@
 import 'package:flutter/material.dart';
 
 class CustomEntryField extends StatelessWidget {
-  //const CustomEntryField({super.key});
-  final String hint = 'entry_field';
-  final TextEditingController _controller = TextEditingController();
+  final String hint;
+  final TextEditingController controller;
   late final bool isPassword;
+
+  CustomEntryField({
+    Key? key,
+    required this.hint,
+    required this.controller,
+    required  this.isPassword
+  }): super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +18,7 @@ class CustomEntryField extends StatelessWidget {
       child: Padding(
         padding: EdgeInsets.all(20),
         child: TextField(
-          controller: _controller,
+          controller: controller,
           obscureText: isPassword,
           decoration: InputDecoration(
               hintText: hint,
