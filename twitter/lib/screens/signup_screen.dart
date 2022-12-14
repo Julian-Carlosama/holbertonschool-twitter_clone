@@ -53,7 +53,6 @@ class _SignUpState extends State<SignUp> {
               SizedBox(
                 height: 75,
               ),
-
               CustomEntryField(
                 hint: 'Enter Name',
                 controller: _nameController,
@@ -75,8 +74,8 @@ class _SignUpState extends State<SignUp> {
                 isPassword: true,
               ),
               Center(
-                child: CustomFlatButton(
-                    label: "Sing up", onPressed: () => signUpUser),
+                child:
+                    CustomFlatButton(label: "Sing up", onPressed: () => null),
               ),
             ],
           ),
@@ -85,12 +84,12 @@ class _SignUpState extends State<SignUp> {
     );
   }
 
-  void signUpUser() async {
+  /*void signUpUser() async {
     context.read<Auth>().signUpWithEmail(
           context: context,
           email: _emailController.text,
           password: _passwordController.text,
         );
     Navigator.pushNamed(context, '/homescreen');
-  }
+  }*/
 }

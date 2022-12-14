@@ -3,14 +3,14 @@ import 'package:flutter/material.dart';
 class CustomEntryField extends StatelessWidget {
   final String hint;
   final TextEditingController controller;
-  late final bool isPassword;
+  final bool isPassword;
 
-  CustomEntryField({
-    Key? key,
-    required this.hint,
-    required this.controller,
-    required  this.isPassword
-  }): super(key: key);
+  CustomEntryField(
+      {Key? key,
+      required this.hint,
+      required this.controller,
+      required this.isPassword})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class CustomEntryField extends StatelessWidget {
               filled: true,
               fillColor: Colors.grey[200],
               border: OutlineInputBorder(
-                borderRadius: BorderRadius.circular(30.0),
+                borderRadius: BorderRadius.circular(30),
                 borderSide: BorderSide(width: 3, color: Colors.blue),
               )),
         ),

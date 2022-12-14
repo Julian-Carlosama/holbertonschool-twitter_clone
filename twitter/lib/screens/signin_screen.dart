@@ -5,7 +5,7 @@ import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
 class SignIn extends StatefulWidget {
-  const SignIn({super.key});
+  const SignIn({Key? key}) : super(key: key);
 
   @override
   State<SignIn> createState() => _SignInState();
@@ -14,6 +14,8 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   late TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
+  /*late TextEditingController _emailController;
+  late TextEditingController _passwordController;*/
 
   @override
   void initState() {
@@ -32,23 +34,66 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 247, 246, 246),
-      appBar: AppBar(
-        backgroundColor: Colors.white,
-        centerTitle: true,
-        title: Text(
-          'Sing in',
-          style: TextStyle(color: Colors.black),
-        ),
-      ),
-      body: Column(
-        children: [
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      /*body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+            'Sing In',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 38,
+                fontWeight: FontWeight.w600
+            ),
+          ),
+          SizedBox(
+            width: 70,
+            height: 70,
+            child: Image.network(
+            'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
+            ),
+          ),
           SizedBox(
             height: 50,
           ),
-          Container(
+
+          CustomEntryField(
+              hint: 'Enter email',
+              controller: _emailController,
+              isPassword: false),
+          CustomEntryField(
+              hint: 'Enter password',
+              controller: _passwordController,
+              isPassword: true),
+
+          ],
+        ),
+      ),*/
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Text(
+            'Sing In',
+            style: TextStyle(
+                color: Colors.black,
+                fontSize: 38,
+                fontWeight: FontWeight.w600
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          SizedBox(
+            width: 100,
             height: 100,
-            child: Image.asset('name'),
+            child: Image.network(
+            'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
+            ),
+          ),
+          
+          SizedBox(
+            height: 15,
           ),
           CustomEntryField(
               hint: 'Enter email',
@@ -68,7 +113,7 @@ class _SignInState extends State<SignIn> {
                     )),
           ),
           SizedBox(
-            height: 50,
+            height: 30,
           ),
           GestureDetector(
             onTap: (() => Navigator.push(
@@ -76,7 +121,13 @@ class _SignInState extends State<SignIn> {
                   MaterialPageRoute(builder: (context) => const SignUp()),
                 )),
             child: Center(
-              child: Text('Sign up'),
+              child: Text(
+                'Sign up',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
+                ),
             ),
           ),
           SizedBox(
@@ -86,10 +137,16 @@ class _SignInState extends State<SignIn> {
             onTap: (() => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => const ForgetPassword()),
+                      builder: (context) => const ForgetPassword()),
                 )),
             child: Center(
-              child: Text('Forget password'),
+              child: Text(
+                'Forget password?',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
+              ),
             ),
           )
         ],
