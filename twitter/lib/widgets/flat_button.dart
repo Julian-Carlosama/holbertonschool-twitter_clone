@@ -20,10 +20,9 @@ class CustomFlatButton extends StatelessWidget {
                 label,
                 style: TextStyle(
                   //color: Colors.black,
-                  fontSize: 32,
+                  fontSize: 42,
                   fontWeight: FontWeight.w900,
-                  
-                  ),
+                ),
               ),
             ),
           ),

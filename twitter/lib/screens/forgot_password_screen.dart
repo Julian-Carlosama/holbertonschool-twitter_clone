@@ -27,17 +27,21 @@ class _ForgetPasswordState extends State<ForgetPassword> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
           leading: BackButton(
             color: Colors.blue,
             onPressed: (() => Navigator.of(context).pop()),
           ),
-          elevation: 0.0,
+          elevation: 0,
           backgroundColor: Colors.white,
           centerTitle: true,
           title: Text(
             'Forget Password',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 26
+            ),
           )),
       body: Container(
           child: SingleChildScrollView(
@@ -49,19 +53,30 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             Center(
               child: Text(
                 'Forget password',
+                style: TextStyle(
+                  fontSize: 30,
+                  color: Colors.black,
+                  fontWeight: FontWeight.w700
+                ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Center(
               child: Text(
                 'Enter your email address below to',
+                style: TextStyle(
+                  fontSize: 20
+                ),
               ),
             ),
             Center(
               child: Text(
-                'recevie password reset instrection',
+                'recevie password reset instructions.',
+                style: TextStyle(
+                  fontSize: 20
+                )
               ),
             ),
             Center(

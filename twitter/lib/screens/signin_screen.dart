@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/screens/forgot_password_screen.dart';
+import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/screens/signup_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
@@ -14,8 +15,6 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   late TextEditingController _emailController = TextEditingController();
   TextEditingController _passwordController = TextEditingController();
-  /*late TextEditingController _emailController;
-  late TextEditingController _passwordController;*/
 
   @override
   void initState() {
@@ -35,41 +34,6 @@ class _SignInState extends State<SignIn> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      /*body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text(
-            'Sing In',
-            style: TextStyle(
-                color: Colors.black,
-                fontSize: 38,
-                fontWeight: FontWeight.w600
-            ),
-          ),
-          SizedBox(
-            width: 70,
-            height: 70,
-            child: Image.network(
-            'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
-            ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-
-          CustomEntryField(
-              hint: 'Enter email',
-              controller: _emailController,
-              isPassword: false),
-          CustomEntryField(
-              hint: 'Enter password',
-              controller: _passwordController,
-              isPassword: true),
-
-          ],
-        ),
-      ),*/
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -91,7 +55,6 @@ class _SignInState extends State<SignIn> {
             'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
             ),
           ),
-          
           SizedBox(
             height: 15,
           ),
@@ -107,10 +70,12 @@ class _SignInState extends State<SignIn> {
             child: CustomFlatButton(
                 label: 'Submit',
                 onPressed: () => Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const BottomAppBar()),
-                    )),
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const HomeScreen()
+                  ),
+                )
+            ),
           ),
           SizedBox(
             height: 30,
@@ -148,7 +113,24 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
-          )
+          ),
+          /*GestureDetector(
+            onTap: (() => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const HomeScreen()),
+                )
+            ),
+            child: Center(
+              child: Text(
+                'Ver Home',
+                style: TextStyle(
+                  color: Colors.blue,
+                  fontSize: 20,
+                ),
+              ),
+            ),
+          ),*/
         ],
       ),
     );

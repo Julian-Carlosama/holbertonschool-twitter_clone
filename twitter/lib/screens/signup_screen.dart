@@ -37,21 +37,39 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 247, 246, 246),
+      backgroundColor: Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
+          elevation: 0,
           leading: BackButton(
             color: Colors.blue,
             onPressed: (() => Navigator.of(context).pop()),
           ),
           backgroundColor: Colors.white,
           centerTitle: true,
-          title: Text('Sing Up', style: TextStyle(color: Colors.black))),
+          title: Text(
+            'Sing Up',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 26
+            )
+          )
+      ),
       body: Container(
         child: SingleChildScrollView(
           child: Column(
             children: [
               SizedBox(
-                height: 75,
+                height: 37,
+              ),
+              SizedBox(
+            width: 90,
+            height: 90,
+            child: Image.network(
+            'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
+            ),
+          ),
+              SizedBox(
+                height: 27,
               ),
               CustomEntryField(
                 hint: 'Enter Name',
@@ -69,7 +87,7 @@ class _SignUpState extends State<SignUp> {
                 isPassword: true,
               ),
               CustomEntryField(
-                hint: 'confirm Password',
+                hint: 'Confirm Password',
                 controller: _confirmController,
                 isPassword: true,
               ),

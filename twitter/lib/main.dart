@@ -12,19 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: SignIn(),
-      /*theme: ThemeData(
-        primaryColor: Colors.white,
-        
-        iconTheme: IconThemeData(color: new Color.fromRGBO(56, 161, 243, 1)),
-        floatingActionButtonTheme: FloatingActionButtonThemeData(
-          backgroundColor: new Color.fromRGBO(56, 161, 243, 1),
-        )
-      ),
-      initialRoute: 'CustomEntryField',
-      routes: {
-        CustomEntryField.id:(context) => CustomEntryField(),
-      },*/
     );
   }
 }
