@@ -40,10 +40,7 @@ class _SignInState extends State<SignIn> {
           Text(
             'Sing In',
             style: TextStyle(
-                color: Colors.black,
-                fontSize: 38,
-                fontWeight: FontWeight.w600
-            ),
+                color: Colors.black, fontSize: 38, fontWeight: FontWeight.w600),
           ),
           SizedBox(
             height: 20,
@@ -52,7 +49,7 @@ class _SignInState extends State<SignIn> {
             width: 100,
             height: 100,
             child: Image.network(
-            'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
+              'http://assets.stickpng.com/images/580b57fcd9996e24bc43c53e.png',
             ),
           ),
           SizedBox(
@@ -70,12 +67,10 @@ class _SignInState extends State<SignIn> {
             child: CustomFlatButton(
                 label: 'Submit',
                 onPressed: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const HomeScreen()
-                  ),
-                )
-            ),
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomeScreen()),
+                    )),
           ),
           SizedBox(
             height: 30,
@@ -92,7 +87,7 @@ class _SignInState extends State<SignIn> {
                   color: Colors.blue,
                   fontSize: 20,
                 ),
-                ),
+              ),
             ),
           ),
           SizedBox(
@@ -117,10 +112,8 @@ class _SignInState extends State<SignIn> {
           /*GestureDetector(
             onTap: (() => Navigator.push(
                   context,
-                  MaterialPageRoute(
-                      builder: (context) => const HomeScreen()),
-                )
-            ),
+                  MaterialPageRoute(builder: (context) => const HomeScreen()),
+                )),
             child: Center(
               child: Text(
                 'Ver Home',
