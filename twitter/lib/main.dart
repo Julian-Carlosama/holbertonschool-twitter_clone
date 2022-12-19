@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:twitter/providers/share_state.dart';
 import 'package:twitter/screens/signin_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 
@@ -11,9 +13,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) => SharedState()),
+    ],
+    child: MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SignIn(),
+    ),
     );
   }
 }

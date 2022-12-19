@@ -109,7 +109,7 @@ class _SignInState extends State<SignIn> {
               ),
             ),
           ),
-          /*GestureDetector(
+          GestureDetector(
             onTap: (() => Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const HomeScreen()),
@@ -123,7 +123,7 @@ class _SignInState extends State<SignIn> {
                 ),
               ),
             ),
-          ),*/
+          ),
         ],
       ),
     );
