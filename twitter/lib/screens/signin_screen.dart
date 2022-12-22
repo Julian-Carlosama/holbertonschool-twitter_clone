@@ -33,18 +33,36 @@ class _SignInState extends State<SignIn> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(80),
+        child: AppBar(
+          elevation: 0.0,
+          backgroundColor: Colors.white,
+          centerTitle: true,
+          title: Container(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(
+                  height: 16,
+                ),
+                Text(
+                "Sing in",
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 38,
+                ),
+              ),
+              ]
+            ),
+          ),
+        ),
+      ),
+      body: Column(       
+        //mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            'Sing In',
-            style: TextStyle(
-                color: Colors.black, fontSize: 38, fontWeight: FontWeight.w600),
-          ),
-          SizedBox(
-            height: 20,
-          ),
           SizedBox(
             width: 100,
             height: 100,
@@ -102,21 +120,6 @@ class _SignInState extends State<SignIn> {
             child: Center(
               child: Text(
                 'Forget password?',
-                style: TextStyle(
-                  color: Colors.blue,
-                  fontSize: 20,
-                ),
-              ),
-            ),
-          ),
-          GestureDetector(
-            onTap: (() => Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const HomeScreen()),
-                )),
-            child: Center(
-              child: Text(
-                'Ver Home',
                 style: TextStyle(
                   color: Colors.blue,
                   fontSize: 20,

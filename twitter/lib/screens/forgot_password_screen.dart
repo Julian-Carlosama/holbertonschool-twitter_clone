@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/widgets/entry_field.dart';
 import 'package:twitter/widgets/flat_button.dart';
 
@@ -89,7 +90,7 @@ class _ForgetPasswordState extends State<ForgetPassword> {
             Center(
               child: CustomFlatButton(
                 label: 'Submit',
-                onPressed: () {},
+                onPressed: () => const HomeScreen(),
               ),
             ),
           ],

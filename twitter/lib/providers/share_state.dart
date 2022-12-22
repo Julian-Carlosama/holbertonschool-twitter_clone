@@ -15,4 +15,6 @@ class SharedState extends ChangeNotifier {
     _pageNum = index;
     notifyListeners();
   }
+
+  void setIndex(int index) {}
 }

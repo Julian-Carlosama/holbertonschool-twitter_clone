@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:twitter/widgets/bar_menu.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
+import 'package:twitter/widgets/users_search_results_widget.dart';
+import 'package:twitter/widgets/post_widget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,6 +24,18 @@ class _HomeScreenState extends State<HomeScreen> {
         ),
       ),
       drawer: SideBarMenu(),
+      body: Row(
+        
+        children: [
+          //Text('Hello'),
+          PostWidget(
+            name: 'Juli', 
+            subname: 'Carlosam', 
+            post: 'post fdsfu sdfhsi fdsiuhfre suhfwi fiurfheirh sdhfri', 
+            tag: 'tag', 
+            Imgurl: 'Imgurl')
+        ],
+      ),
 
       bottomNavigationBar: BarMenu(),
       

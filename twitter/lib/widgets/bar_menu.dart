@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:twitter/providers/share_state.dart';
 import 'package:twitter/screens/chats_screen.dart';
 import 'package:twitter/screens/home_screen.dart';
 import 'package:twitter/screens/notifications_screen.dart';
 import 'package:twitter/screens/search_screen.dart';
-
 
 class BarMenu extends StatefulWidget {
   const BarMenu({super.key});
@@ -13,7 +14,9 @@ class BarMenu extends StatefulWidget {
 }
 
 class _BarMenuState extends State<BarMenu> {
-  List<Widget> ListsScreens = [
+  int _currentIndex = 0;
+
+  List<Widget> ListScreens = [
     HomeScreen(),
     SearchScreen(),
     NotificationsScreen(),
@@ -22,41 +25,47 @@ class _BarMenuState extends State<BarMenu> {
 
   @override
   Widget build(BuildContext context) {
-    //const provid = Provider.of<>(context, listen: false)
-
     return BottomNavigationBar(
+      type: BottomNavigationBarType.fixed,
       items: [
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.home,
-            size: 50,
-            color: Colors.blue,
-          ),
-          label: ''
-        ),
+            icon: const Icon(
+              Icons.home,
+              size: 30,
+              //color: Colors.blue,
+            ),
+            label: ''),
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.search,
-            size: 50,
-          ),
-          label: ''
-        ),
+            icon: const Icon(
+              Icons.search,
+              size: 30,
+            ),
+            label: ''),
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.notifications,
-            size: 50,
-          ),
-          label: ''
-        ),
+            icon: const Icon(
+              Icons.notifications,
+              size: 30,
+            ),
+            label: ''),
         BottomNavigationBarItem(
-          icon: const Icon(
-            Icons.email,
-            size: 50,
+            icon: const Icon(
+              Icons.email,
+              size: 30,
+            ),
+            label: '')
+      ],
+      currentIndex: _currentIndex,
+      onTap: (int index) {
+        setState(() {
+          _currentIndex = index;
+        });
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (context) => ListScreens[index],
           ),
-          label: ''
-        )
-
-      ]
+        );
+      },
     );
   }
 }
