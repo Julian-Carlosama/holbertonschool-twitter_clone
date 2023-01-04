@@ -5,6 +5,8 @@ class User {
   String userName;
   String displayName;
   String imageUrl;
+  String bio;
+  String coverImgUrl;
   int followers;
   int following;
   List<String> followersList;
@@ -17,6 +19,8 @@ class User {
     this.userName = 'userName',
     this.displayName = 'displayName',
     this.imageUrl = 'imageUrl',
+    this.bio = 'No bio available',
+    this.coverImgUrl = 'imageUrl',
     this.followers = 0,
     this.following = 0,
     this.followersList = const [''],
@@ -30,11 +34,15 @@ class User {
     userName = map['userName'];
     displayName = map['displayName'];
     imageUrl = map['imageUrl'];
+    bio = map['bio'];
+    coverImgUrl = map['coverImgUrl'];
     followers = map['followers'];
     following = map['following'];
     followersList = map['followersList']?.cast<String>();
     followingList = map['followingList']?.cast<String>();
   }
+
+  get id => null;
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = Map<String, dynamic>();
@@ -44,10 +52,25 @@ class User {
     data['userName'] = this.userName;
     data['displayName'] = this.displayName;
     data['imageUrl'] = this.imageUrl;
+    data['bio'] = this.bio;
+    data['coverImgUrl'] = this.coverImgUrl;
     data['followers'] = this.followers;
     data['following'] = this.following;
     data['followersList'] = this.followersList;
     data['followingList'] = this.followingList;
     return data;
   }
+}
+
+
+User createNewUser() {
+  final uuid = Uuid();
+  String userID = uuid.v4();
+  String userName = uuid.v4().substring(0, 8);
+  return User(
+    userID: userID,
+    userName: userName,
+    imageUrl: 'imageUrl',
+    coverImgUrl: 'coverImgUrl',
+  );
 }

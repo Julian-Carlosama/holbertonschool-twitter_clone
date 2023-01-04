@@ -3,6 +3,7 @@ import 'package:twitter/widgets/bar_menu.dart';
 import 'package:twitter/widgets/side_bar_menu.dart';
 import 'package:twitter/widgets/users_search_results_widget.dart';
 import 'package:twitter/widgets/post_widget.dart';
+import 'package:twitter/screens/edit_post_screen.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -25,7 +26,6 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       drawer: SideBarMenu(),
       body: Row(
-        
         children: [
           //Text('Hello'),
           PostWidget(
@@ -36,7 +36,16 @@ class _HomeScreenState extends State<HomeScreen> {
             Imgurl: 'Imgurl')
         ],
       ),
-
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => EditPostScreen(),
+            ),
+          );
+        },
+      
       bottomNavigationBar: BarMenu(),
       
     );
